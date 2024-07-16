@@ -67,18 +67,6 @@ comando para ouvir o webhook do stripe[roda no terminal dentro da pasta com arqu
 """
 
 
-# SEM segurança de verificação do token webhook 
-# @csrf_exempt
-# def stripe_webhook(request):
-#     payload = request.body
-
-#     # comment: For now, you only nedd print out the webhook payload so you can see
-#     # comment: the structure.
-#     print(payload)
-
-#     return HttpResponse(status=200)
-
-
 
 # com segurança de verificação do token webhook 
 @csrf_exempt
@@ -117,16 +105,6 @@ def stripe_webhook(request):
 
     return HttpResponse(status=200)
 
-# sequencia das mensagens de aprovação do webhook stripe via terminal
-
-"""
-charge.updated
-charged.succeeded
-payment.intent.succeeded
-payment.intent.created
-checkout.session.completed
-
-"""
 
 
 
@@ -141,42 +119,3 @@ curl -X POST \
 """
 
 
-
-# rota se fosse em produção
-"""
-
-def create_checkout_session(request, id):
-    product = Product.objects.get(id = id)
-    if settings.DEBUG:
-        YOUR_DOMAIN = "http://127.0.0.1:8000/"
-    else:
-        NOVO_DOMAIN = 'http://seudominio.com.br'
-
-    checkout_session = stripe.checkout.Session.create(
-        line_items=[
-            {
-                'price_data':{
-                    'currency': 'BRL',
-                    'unit_amount' : int(product.price),
-                    'product_data': {
-                        'name': product.name
-                    }
-                },
-                'quantity': 1,
-            },
-        ],
-        payment_method_types=[
-            'card',
-            'boleto',
-        ],
-        metadata={
-            'id_product': product.id,
-        },
-        mode='payment',
-        success_url=YOUR_DOMAIN + '/sucesso',
-        cancel_url=YOUR_DOMAIN + '/erro',
-    )
-    return JsonResponse({'id': checkout_session.id})
-
-    
-"""
