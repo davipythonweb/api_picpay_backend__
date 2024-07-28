@@ -1,1 +1,1 @@
-# django_checkout_2__
+# Desafio_Backend_PICPAY--> com Django + Django_Ninja
