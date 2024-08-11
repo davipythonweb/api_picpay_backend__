@@ -3,10 +3,11 @@ from django.contrib.auth.models import AbstractUser
 from decimal import Decimal
 
 
+# sobrescrevendo o metodo AbstractUser para criar o cpf
 class User(AbstractUser):
     cpf = models.CharField(max_length=14, unique=True)
     email = models.EmailField(unique=True)
-    amount = models.DecimalField(max_digits=15, decimal_places=2)
+    amount = models.DecimalField(max_digits=15, decimal_places=2, default=Decimal('0.00'))
 
     # sobrescrever o salvamento do cpf para nao ter pontos nem virgulas .
     def save(self, *args, **kwargs):

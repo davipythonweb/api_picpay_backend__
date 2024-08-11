@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'users',
 ]
 
-# configuração para sobrescrever o metodo User
+# configuração para sobrescrevendo o metodo AbstractUser para criar o cpf
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
