@@ -25,11 +25,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rolepermissions',
     'users',
 ]
 
 # configuração para sobrescrevendo o metodo AbstractUser para criar o cpf
 AUTH_USER_MODEL = 'users.User'
+
+# Permissoes para usuarios
+ROLEPERMISSIONS_MODULE = 'app.roles'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
