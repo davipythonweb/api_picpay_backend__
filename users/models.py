@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from decimal import Decimal
-
+from .validators import validate_cpf
 
 # sobrescrevendo o metodo AbstractUser para criar o cpf
 class User(AbstractUser):
-    cpf = models.CharField(max_length=14, unique=True)
+    cpf = models.CharField(max_length=14, unique=True, validators=[validate_cpf])
     email = models.EmailField(unique=True)
     amount = models.DecimalField(max_digits=15, decimal_places=2, default=Decimal('0.00'))
 
