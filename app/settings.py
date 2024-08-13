@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     'rolepermissions',
     'users',
+    'payments',
 ]
 
 # configuração para sobrescrevendo o metodo AbstractUser para criar o cpf
