@@ -33,5 +33,3 @@ def create_user(request, type_user_schema:TypeUserSchema):
 
 # type_user é a variavel que armazena todos os dados enviados na requisição
  
-
-#  tempo do video 56:05
