@@ -10,3 +10,14 @@
 `adm-super`
 `Admin#45`
 `adm@contato.com`
+
+
+- Corpo da requisição para enviar no teste de transação  da api
+"""
+{
+    "amount": 5,
+    "payer_id": 8,
+    "payee_id": 7
+}
+
+"""

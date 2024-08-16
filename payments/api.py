@@ -8,6 +8,12 @@ from rolepermissions.checkers import has_permission
 
 from django.db import transaction as django_transaction
 
+from .models import Transactions
+
+import requests
+from django.conf import settings
+
+
 
 payments_router = Router()
 
@@ -33,14 +39,19 @@ def transaction(request, transaction: TransactionSchema):
         payer.pay(transaction.amount)
         payee.receive(transaction.amount)
 
-        table_transaction = transaction(
+        table_transaction = Transactions(
             amount=transaction.amount,
             payer_id=transaction.payer,
-            payee_id=transaction.payee
+            payee_id=transaction.payee  
         )
         payer.save()
         payee.save()
         table_transaction.save()
+
+        # fazendo a verificação para o mocky de autorização para a TRANSAÇÂO
+        response = requests.get(settings.AUTHORIZE_TRANSFER_ENDPOINT).json()
+        if response.get('status') != "authorized":
+            raise Exception()
     
     return 200, {'transaction_id': 1}
 
