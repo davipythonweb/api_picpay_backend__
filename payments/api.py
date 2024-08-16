@@ -64,6 +64,8 @@ def transaction(request, transaction: TransactionSchema):
 
     # enviando notificação assincrona com Worker simulado com biblioteca huey
     send_notification(payer.first_name, payee.first_name, transaction.amount)
+
+    # retornando o status e o id da transaçao
     return 200, {'transaction_id': table_transaction.id}
 
-# Implementar o envio de email em fila de tarefas(celery) , com o status da transação e as informações.
+# Implementar o envio de email  ou sms em fila de tarefas(celery) , com o status da transação e as informações.

@@ -29,6 +29,8 @@ ImportError: cannot import name 'baseconv' from 'django.utils' (/home/davi/Músi
 - comando para rodar o WORKER do huey para  simulação de um CLUSTER de envio de notificação Assincrona no terminal=>
 `huey_consumer.py payments.tasks.HUEY`
 
+- comando para acrescentar mais threads --workers= >
+`huey_consumer.py payments.tasks.HUEY --workers=4`
 
 
 
