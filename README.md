@@ -1,6 +1,6 @@
 # Desafio_Backend_PICPAY/\/\/\/>Django + Django_Ninja
 
-- ![desafio PIcPay url do git]([https://github.com/PicPay/picpay-desafio-backend])
+- ![https://github.com/PicPay/picpay-desafio-backend]
 
 
 ## API de tranferencia Bancaria com gerenciador de contexto para verificar transações
