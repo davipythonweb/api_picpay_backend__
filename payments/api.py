@@ -53,7 +53,7 @@ def transaction(request, transaction: TransactionSchema):
         payee.save()
         table_transaction.save()
 
-        # fazendo a verificação para o mocky(simulando uma Bandeica de cartão por de autorização para a TRANSAÇÂO.  ==>exemplo (MASTERCARD) que LIBERA A TRANFERENCIA OU NÂO PARA O USUARIO)
+        # fazendo a verificação para o mocky(simulando uma Bandeira de cartão de autorização para a TRANSAÇÂO.  ==>exemplo (MASTERCARD) que LIBERA A TRANFERENCIA OU NÂO PARA O USUARIO)
         response = requests.get(settings.AUTHORIZE_TRANSFER_ENDPOINT).json()
         if response.get('status') != "authorized":
             raise Exception('Transação Não autorizada! Fale com sua Instituição Bancaria.')

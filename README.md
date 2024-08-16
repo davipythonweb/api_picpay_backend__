@@ -1,14 +1,18 @@
 # Desafio_Backend_PICPAY/\/\/\/>Django + Django_Ninja
 
 
-- API de tranferencia Bancaria com gerenciador de contexto para verificar transação
+- desafio PIcPay url do git `https://github.com/PicPay/picpay-desafio-backend`
+
+
+## API de tranferencia Bancaria com gerenciador de contexto para verificar transações
 
 - dois usuarios: people and company
 
 - people=> faz e recebe tranfarências
 
-
 - company=> só recebe tranferências
+
+
 
 - enviando uma notificação , apos as transaçoes com=> django-q
 - para rodar o worker com o CLUSTER  simulado do django-q =>
@@ -21,12 +25,10 @@ ImportError: cannot import name 'baseconv' from 'django.utils' (/home/davi/Músi
 """
 
 
--BIBLIOTECA HUEY com banco separado para notificações.
+-BIBLIOTECA HUEY com banco separado para processamento de fila de notificações.
 - comando para rodar o WORKER do huey para  simulação de um CLUSTER de envio de notificação Assincrona no terminal=>
 `huey_consumer.py payments.tasks.HUEY`
 
-
-- desafio PIcPay url do git `https://github.com/PicPay/picpay-desafio-backend`
 
 
 

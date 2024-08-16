@@ -13,15 +13,17 @@ ImportError: cannot import name 'baseconv' from 'django.utils' (/home/davi/Músi
 
 
 
-
+# lib para envio de notificação assincrona similar ao django-q ou Celery
 from huey import SqliteHuey
 
+# configuração
 HUEY = SqliteHuey(filename='huey.db')
 
-@HUEY.task()
+# decorator da task
+@HUEY.task(retries=4, retry_delay=2, timeout=30)
 # funçao para notificação assincrona com biblioteca huey
 def send_notification(payer, payee, amount):
-    print(f'{payer}, Acaba de enviar um pagamento para {payee}, no valor de R${amount}.')
+    print(f'{payer}, Acaba de enviar um pagamento para {payee}, no valor de R$: {amount}.')
 
 
 
