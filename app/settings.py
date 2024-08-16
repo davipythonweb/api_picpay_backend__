@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'rolepermissions',
     'users',
     'payments',
+    'django-q'
 ]
 
 # configuração para sobrescrevendo o metodo AbstractUser para criar o cpf
@@ -134,3 +135,14 @@ AUTHORIZE_TRANSFER_ENDPOINT = "https://run.mocky.io/v3/d566d18d-4168-4c76-86a4-a
 
 # URL para criar seu Mocky
 "https://designer.mocky.io/design"
+
+
+# OBS: o orm era necessario usar um banco em memoria como o Redis
+# CLUSTER PARA ENVIO DE NOTIFICAÇÂO com => django-q
+Q_CLUSTER = {
+    'name': 'DjangoQ',
+    'workers': 4,
+    'timeout': 30,
+    'retry': 300,
+    'orm': 'default'
+}

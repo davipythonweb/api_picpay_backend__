@@ -9,6 +9,10 @@
 
 - company=> só recebe tranferências
 
+- enviando uma notificação , apos as transaçoes com=> django-q
+- para rodar o worker com o CLUSTER  simulado do django-q =>
+`python3 manage.py qcluster`
+
 - desafio PIcPay url do git `https://github.com/PicPay/picpay-desafio-backend`
 
 
