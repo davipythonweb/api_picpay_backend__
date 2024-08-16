@@ -16,7 +16,7 @@
 > BIBLIOTECA HUEY com banco separado para processamento de fila de notificações :heavy_check_mark:
 
 
-- enviando uma notificação , apos as transaçoes com=> django-q
+- enviando uma notificação , apos as transaçoes com=> django-q :warning:
 - para rodar o worker com o CLUSTER  simulado do django-q =>
 `python3 manage.py qcluster`
 
@@ -28,7 +28,7 @@ ImportError: cannot import name 'baseconv' from 'django.utils' (/home/davi/Músi
 
 
 `Implementado`
-- comando para rodar o WORKER do huey para  simulação de um CLUSTER de envio de notificação Assincrona no terminal=>
+- comando para rodar o WORKER do huey para  simulação de um CLUSTER de envio de notificação Assincrona no terminal=> :heavy_check_mark:
 `huey_consumer.py payments.tasks.HUEY`
 
 - comando para acrescentar mais threads --workers= >
