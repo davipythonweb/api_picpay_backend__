@@ -119,3 +119,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# MOCKYS para testes de autorizaçoes de serviço 
+AUTHORIZE_TRANSFER_ENDPOINT = "https://run.mocky.io/v3/d566d18d-4168-4c76-86a4-a83ab4d7b077" #error
+AUTHORIZE_TRANSFER_ENDPOINT = "https://run.mocky.io/v3/3465d2ee-429a-471b-8495-062a8f28b728" #success
+
+
+# Mocky service authorized
+"https://run.mocky.io/v3/d566d18d-4168-4c76-86a4-a83ab4d7b077"
+
+# Mocky service unauthorized
+"https://run.mocky.io/v3/3465d2ee-429a-471b-8495-062a8f28b728"
+
+# URL para criar seu Mocky
+"https://designer.mocky.io/design"
