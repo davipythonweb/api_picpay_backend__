@@ -6,8 +6,7 @@
 
 ## API de tranferencia Bancaria com gerenciador de contexto para verificar transações
 
-> : heavy_check_mark:
-> > Status do Projeto: dois usuarios: people and company :heavy_check_mark:
+>  Status do Projeto: dois usuarios: people and company :heavy_check_mark:
 
 
 > people=> faz e recebe tranfarências: heavy_check_mark:
