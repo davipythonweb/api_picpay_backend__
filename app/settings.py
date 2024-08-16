@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'rolepermissions',
     'users',
     'payments',
-    'django-q'
+    
+    'django_q'
 ]
 
 # configuração para sobrescrevendo o metodo AbstractUser para criar o cpf
