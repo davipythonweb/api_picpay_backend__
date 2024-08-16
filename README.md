@@ -6,14 +6,14 @@
 
 ## API de tranferencia Bancaria com gerenciador de contexto para verificar transações
 
->   Dois usuarios: people and company: Concluido :heavy_check_mark:
+>   Dois usuarios=> people and company: :heavy_check_mark:
 
 
-> people=> faz e recebe tranfarências: heavy_check_mark:
+> People=> faz e recebe tranfarências:   :heavy_check_mark:
 
-> company=> só recebe tranferências: heavy_check_mark:
+> Company=> só recebe tranferências:  :heavy_check_mark:
 
-> BIBLIOTECA HUEY com banco separado para processamento de fila de notificações: heavy_check_mark:
+> BIBLIOTECA HUEY com banco separado para processamento de fila de notificações :heavy_check_mark:
 
 
 - enviando uma notificação , apos as transaçoes com=> django-q
