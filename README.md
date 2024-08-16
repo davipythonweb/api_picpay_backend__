@@ -1,12 +1,19 @@
 # Desafio_Backend_PICPAY/\/\/\/>Django + Django_Ninja
 
-- checkout
+
+- API de tranferencia Bancaria com gerenciador de contexto para verificar transação
+
+- dois usuarios: people and company
+
+- people=> faz e recebe tranfarências
+
+- company=> só recebe tranferências
 
 - desafio PIcPay url do git `https://github.com/PicPay/picpay-desafio-backend`
 
 
 
-- super-user-teste
+- config-admin-django
 `adm-super`
 `Admin#45`
 `adm@contato.com`

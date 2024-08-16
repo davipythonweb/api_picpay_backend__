@@ -28,10 +28,10 @@ def transaction(request, transaction: TransactionSchema):
     
 
     if not has_permission(payer, 'make_transfer'):
-        return 403, {'error': 'Voce não possui permissao para realizar tranferência.'}
+        return 403, {'error': f'Usuario: {payer} não possui permissao para realizar tranferência.'}
     
     if not has_permission(payee, 'receive_tranfer' ):
-        return 403, {'error': 'O usuario não pode receber tranferências.'}
+        return 403, {'error': f'O usuario {payee} não pode receber tranferências.'}
     
 
     # GERENCIADOR DE CONTEXTO->Atomicidade=>tudo será salvo em uma camada intermediaria(qualquer excessão será dado um rowback de tudo que foi feito)
@@ -51,7 +51,7 @@ def transaction(request, transaction: TransactionSchema):
         # fazendo a verificação para o mocky(simulando uma Bandeica de cartão por de autorização para a TRANSAÇÂO.  ==>exemplo (MASTERCARD) que LIBERA A TRANFERENCIA OU NÂO PARA O USUARIO)
         response = requests.get(settings.AUTHORIZE_TRANSFER_ENDPOINT).json()
         if response.get('status') != "authorized":
-            raise Exception('Tranferencia não Autorizada! Fale com seu Banco.')
+            raise Exception('Transação Não autorizada! Fale com sua Instituição Bancaria.')
     
     return 200, {'transaction_id': 1}
 
