@@ -51,7 +51,7 @@ def transaction(request, transaction: TransactionSchema):
         # fazendo a verificação para o mocky de autorização para a TRANSAÇÂO
         response = requests.get(settings.AUTHORIZE_TRANSFER_ENDPOINT).json()
         if response.get('status') != "authorized":
-            raise Exception()
+            raise Exception('Tranferencia não Autorizada! Fale com seu Banco.')
     
     return 200, {'transaction_id': 1}
 
