@@ -13,12 +13,14 @@ from .models import Transactions
 import requests
 from django.conf import settings
 
-from django_q.tasks import async_task
+# from django_q.tasks import async_task
+
 from .tasks import send_notification
 
 
 
 payments_router = Router()
+
 
 @payments_router.post('/', response={200: dict, 400:dict, 403: dict})
 def transaction(request, transaction: TransactionSchema):
@@ -56,11 +58,12 @@ def transaction(request, transaction: TransactionSchema):
         if response.get('status') != "authorized":
             raise Exception('Transação Não autorizada! Fale com sua Instituição Bancaria.')
     
-    # enviando uma noticação simulada de um cluster com  django-q
-    async_task(send_notification, payer.first_name, payee.first_name, transaction.amount)
+    # ENVIANDO UMA NOTIFICAÇÂO SIMULADA de um cluster com  django-q
+    # async_task(send_notification, payer.first_name, payee.first_name, transaction.amount)
 
-    return 200, {'transaction_id': 1}
+
+    # enviando notificação assincrona com Worker simulado com biblioteca huey
+    send_notification(payer.first_name, payee.first_name, transaction.amount)
+    return 200, {'transaction_id': table_transaction.id}
 
 # Implementar o envio de email em fila de tarefas(celery) , com o status da transação e as informações.
-
-#  tempo do video  1:30:22
