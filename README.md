@@ -1,17 +1,18 @@
 # Desafio_Backend_PICPAY/\/\/\/>Django + Django_Ninja
-
-
-- desafio PIcPay url do git `https://github.com/PicPay/picpay-desafio-backend`
+ ``
+- ![desafio PIcPay url do git]([https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT](https://github.com/PicPay/picpay-desafio-backend))
 
 
 ## API de tranferencia Bancaria com gerenciador de contexto para verificar transações
 
-- dois usuarios: people and company
+- dois usuarios: people and company: heavy_check_mark
 
-- people=> faz e recebe tranfarências
 
-- company=> só recebe tranferências
+- people=> faz e recebe tranfarências: heavy_check_mark
 
+- company=> só recebe tranferências: heavy_check_mark
+
+-BIBLIOTECA HUEY com banco separado para processamento de fila de notificações: heavy_check_mark:
 
 
 - enviando uma notificação , apos as transaçoes com=> django-q
@@ -25,7 +26,7 @@ ImportError: cannot import name 'baseconv' from 'django.utils' (/home/davi/Músi
 """
 
 
--BIBLIOTECA HUEY com banco separado para processamento de fila de notificações.
+
 - comando para rodar o WORKER do huey para  simulação de um CLUSTER de envio de notificação Assincrona no terminal=>
 `huey_consumer.py payments.tasks.HUEY`
 
