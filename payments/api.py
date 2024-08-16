@@ -48,12 +48,13 @@ def transaction(request, transaction: TransactionSchema):
         payee.save()
         table_transaction.save()
 
-        # fazendo a verificação para o mocky de autorização para a TRANSAÇÂO
+        # fazendo a verificação para o mocky(simulando uma Bandeica de cartão por de autorização para a TRANSAÇÂO.  ==>exemplo (MASTERCARD) que LIBERA A TRANFERENCIA OU NÂO PARA O USUARIO)
         response = requests.get(settings.AUTHORIZE_TRANSFER_ENDPOINT).json()
         if response.get('status') != "authorized":
             raise Exception('Tranferencia não Autorizada! Fale com seu Banco.')
     
     return 200, {'transaction_id': 1}
 
+# Implementar o envio de email em fila de tarefas(celery) , com o status da transação e as informações.
 
-#  tempo do video  1:16:14
+#  tempo do video  1:30:22
