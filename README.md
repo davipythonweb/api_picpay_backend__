@@ -1,5 +1,5 @@
 # Desafio_Backend_PICPAY/\/\/\/>Django + Django_Ninja
- ``
+
 - ![desafio PIcPay url do git]([https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT](https://github.com/PicPay/picpay-desafio-backend))
 
 
